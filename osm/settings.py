@@ -41,6 +41,8 @@ INSTALLED_APPS=[
 
     'openstreetmap.apps.OpenstreetmapConfig',
     'osm_field',
+    'leaflet',
+
 
 ]
 
