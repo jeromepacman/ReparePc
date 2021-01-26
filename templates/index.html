@@ -1,74 +1,80 @@
 <!DOCTYPE html>
 {% load static %}
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+          integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin=""/>
 
-        <title>one page</title>
+    <title>one page</title>
 
-        <style type="text/css">
+    <style type="text/css">
 
-            #map{
-                height:500px;
+        #map {
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="row">
+    <div class="col">
+        <h1 class="text-center mt-2">
+            Geek garage
+        </h1>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="col-6 offset-3">
+
+        <div id="map">
+            <!-- Ici s'affichera la carte -->
+        </div>
+
+        <script type="text/javascript">
+
+            var lat = 47.222990;
+            var lon = 2.065970;
+
+            var cities = {
+
+                {% for object in object_list %}
+                    "{{ object.location }}": {"lat": {{ object.location_lat }}, "lon": {{ object.location_lon }} },
+                {%  endfor %}
+            };
+
+            function initMap() {
+
+                citymap = L.map('map').setView([lat, lon], 6);
+
+                L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+
+                    attribution: '© OpenStreetMap/ODbL - OSM France',
+                    minZoom: 1,
+                    maxZoom: 20
+                }).addTo(citymap);
+
+                for (city in cities) {
+                    var marker = L.marker([cities[city].lat, cities[city].lon]).addTo(citymap);
+                    marker.bindPopup('<img src="{% static 'onlineformapro.png' %}" alt="onlineformapro">');
+                }
             }
-        </style>
-    </head>
-
-    <body>
-        <div class="row">
-            <div class="col">
-                <h1 class="text-center mt-2">
-                    Geek garage
-                </h1>
-            </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-6 offset-3">
-
-                <div id="map">
-                <!-- Ici s'affichera la carte -->
-                </div>
-
-                 <script type="text/javascript">
-
-                    var lat = 47.222990;
-                    var lon = 2.065970;
-
-                    var cities = {
-                        {% for object in object_list %}
-                        "{{ object.location }}": { "lat": {{ object.location_lat }}, "lon": {{ object.location_lon }} },
-                        {% endfor %}
-                    };
-
-                    function initMap() {
-
-                      citymap = L.map('map').setView([lat, lon], 6);
-
-                      L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-
-                         attribution: '© OpenStreetMap/ODbL - OSM France',
-                         minZoom: 1,
-                         maxZoom: 20
-                      }).addTo(citymap);
-
-                      for (city in cities) {
-                        var marker = L.marker([cities[city].lat, cities[city].lon]).addTo(citymap);
-                        marker.bindPopup('<a href="/contact">contact');
-                      }
-                    }
-                    window.onload = function(){
-                    initMap();
-                    };
-                </script>
-            </div>
-        </div>
-
-
-        <script
-            src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="">
+            window.onload = function () {
+                initMap();
+            };
         </script>
-    </body>
+    </div>
+</div>
+
+
+<script
+        src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin="">
+</script>
+</body>
 </html>

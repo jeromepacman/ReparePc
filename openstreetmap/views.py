@@ -2,10 +2,12 @@ from django.shortcuts import render, reverse
 from django.views.generic import CreateView, ListView, FormView
 from .forms import MyOsmForm, ContactForm
 from .models import MyOsm
+from django.core import serializers
+from django.http import HttpResponse
 
 
 class MyOsmView(CreateView):
-    template_name = "openstreetmap/myosm_form.html"
+    template_name="openstreetmap/myosm_form.html"
     form_class=MyOsmForm
     model=MyOsm
 
@@ -26,4 +28,3 @@ class ContactFormView(FormView):
     def form_valid(self, form):
         form.send_email()
         return super().form_valid(form)
-

@@ -4,3 +4,4 @@ from .models import MyOsm
 
 admin.site.register(MyOsm)
 
+

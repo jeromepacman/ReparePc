@@ -42,6 +42,7 @@ INSTALLED_APPS=[
     'openstreetmap.apps.OpenstreetmapConfig',
     'osm_field',
     'leaflet',
+    'crispy_forms',
 
 
 ]
@@ -136,3 +137,5 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 JAZZMIN_SETTINGS = {
     "site_header": "OpenStreetMap",
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
