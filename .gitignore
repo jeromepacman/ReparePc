@@ -1,5 +1,5 @@
 .secret.txt
 venv
-db.sqlite
+db.sqlite3
 .vscode
 
