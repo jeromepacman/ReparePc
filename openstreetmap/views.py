@@ -1,4 +1,6 @@
-from django.shortcuts import render, reverse
+from django.shortcuts import render, reverse, redirect
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse
 from django.views.generic import CreateView, ListView, FormView
 from .forms import MyOsmForm, ContactForm
 from .models import MyOsm
@@ -24,5 +26,10 @@ class ContactFormView(FormView):
     success_url='/'
 
     def form_valid(self, form):
-        form.send_email()
-        return super().form_valid(form)
+        email = form.cleaned_data.get('email')
+        subject = form.cleaned_data.get('name')
+        message = form.cleaned_data.get('message')
+        send_mail(
+            subject, message, email, ['contact@onlineformapro']
+        )
+        return super(ContactFormView, self).form_valid(form)
