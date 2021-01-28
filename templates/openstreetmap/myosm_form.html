@@ -19,19 +19,18 @@
 
     <body>
 
-        <h1> Home </h1>
+        <hr>
+
+
         <div>
-
-        </div>
-
-        <form action="" method="post">
-          {% csrf_token %}
-            <div class="row">
-                <div class="col-6 offset-4">
-
-                {{ form | crispy }}
-                <input type="submit" value="Save" />
-            </div>
-        </form>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-6 offset-4">
+                        {{ form | crispy }}
+                        <input type="submit" value="Save" />
+                    </div>
+                </div>
+            </form>
     </body>
 </html>

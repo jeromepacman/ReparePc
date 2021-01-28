@@ -39,15 +39,6 @@
 
             var lat = 47.222990;
             var lon = 2.065970;
-            var customPopup ={% include 'popup.html'%};
-
-            var cities = ({
-
-                {% for object in object_list %}
-                    "{{ object.location }}": {"lat": {{ object.location_lat }}, "lon": {{ object.location_lon }} },
-
-                {%  endfor %}
-            });
 
             function initMap() {
 
@@ -62,10 +53,10 @@
 
 
 
-                for (city in cities) {
-                    var marker = L.marker([cities[city].lat, cities[city].lon]).addTo(citymap);
-                    marker.bindPopup(customPopup);
-                }
+                {% for object in object_list %}
+                    var marker = L.marker([ {{ object.location_lat }}, {{ object.location_lon }} ]).addTo(citymap);
+                    marker.bindPopup( {% include 'popup.html' %});
+                {% endfor %}
             }
 
             window.onload = function () {
@@ -74,7 +65,6 @@
         </script>
     </div>
 </div>
-
 
 <script
         src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"

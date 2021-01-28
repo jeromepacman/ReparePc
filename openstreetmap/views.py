@@ -2,8 +2,6 @@ from django.shortcuts import render, reverse
 from django.views.generic import CreateView, ListView, FormView
 from .forms import MyOsmForm, ContactForm
 from .models import MyOsm
-from django.core import serializers
-from django.http import HttpResponse
 
 
 class MyOsmView(CreateView):

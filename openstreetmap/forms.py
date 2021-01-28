@@ -1,6 +1,7 @@
 from django import forms
-
 from .models import MyOsm
+from django.core.mail import BadHeaderError, send_mail
+from django.http import HttpResponse, HttpResponseRedirect
 
 
 class MyOsmForm(forms.ModelForm):
@@ -14,5 +15,3 @@ class ContactForm(forms.Form):
     email=forms.EmailField()
     message=forms.CharField(widget=forms.Textarea)
 
-    def send_email(self):
-        pass
