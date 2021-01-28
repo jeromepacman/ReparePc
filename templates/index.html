@@ -39,13 +39,15 @@
 
             var lat = 47.222990;
             var lon = 2.065970;
+            var customPopup ={% include 'popup.html'%};
 
-            var cities = {
+            var cities = ({
 
                 {% for object in object_list %}
                     "{{ object.location }}": {"lat": {{ object.location_lat }}, "lon": {{ object.location_lon }} },
+
                 {%  endfor %}
-            };
+            });
 
             function initMap() {
 
@@ -58,11 +60,14 @@
                     maxZoom: 20
                 }).addTo(citymap);
 
+
+
                 for (city in cities) {
                     var marker = L.marker([cities[city].lat, cities[city].lon]).addTo(citymap);
-                    marker.bindPopup('<img src="{% static 'onlineformapro.png' %}" alt="onlineformapro">');
+                    marker.bindPopup(customPopup);
                 }
             }
+
             window.onload = function () {
                 initMap();
             };
