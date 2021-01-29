@@ -22,7 +22,7 @@
 <body>
     <header>
         <img src=" {% static 'img/nerds-logo-new.png' %}" alt="nerds_logo" width="500" height="90" >
-        <img src=" {% static 'img/shopcrop.jpg' %}" alt="shopcrop" width="100%" height="130">
+        <img src=" {% static 'img/shopcrop.jpg' %}" alt="shop"  height="200">
     </header>
 
     <nav>
@@ -48,7 +48,7 @@
               {%  endif %}
         </ul>
     </nav>
-
+    <h3>Choose your local center</h3>
 
     <div id="map">
         <!-- display map -->
@@ -68,7 +68,6 @@
                 minZoom: 1,
                 maxZoom: 20
             }).addTo(citymap);
-
 
 
             {% for object in object_list %}
