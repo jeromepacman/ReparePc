@@ -6,19 +6,21 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
         <title>contact</title>
     </head>
 
     <body>
-        <form method="post">
-            {% csrf_token %}
-            <div class="row">
-                <div class="col-6 offset-3">
-                    {{ form | crispy }}
-                    <input type="submit" value="Save">
+        <div class="mt-5 bg-gray">
+            <form method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-6 offset-3 text-cyan">
+                        {{ form | crispy }}
+                        <input type="submit" value="Save">
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </body>
 </html>
