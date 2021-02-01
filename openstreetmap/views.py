@@ -2,13 +2,14 @@ from django.conf import settings
 from django.shortcuts import reverse
 from django.core.mail import send_mail, EmailMessage
 from django.contrib.messages.views import SuccessMessageMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView, ListView, DeleteView, FormView
 from django.template.loader import render_to_string
 from .forms import MyOsmForm, ContactForm
 from .models import MyOsm
 
 
-class MyOsmView(SuccessMessageMixin, CreateView):
+class MyOsmView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     template_name="openstreetmap/myosm_form.html"
     form_class=MyOsmForm
     model=MyOsm
@@ -18,7 +19,7 @@ class MyOsmView(SuccessMessageMixin, CreateView):
         return reverse("index")
 
 
-class MyOsmDeleteView(SuccessMessageMixin, DeleteView):
+class MyOsmDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     template_name="openstreetmap/myosm_delete.html"
     model=MyOsm
     success_message="location deleted"
