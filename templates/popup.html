@@ -1,5 +1,5 @@
 {% load static %}
 
-'<a class href="{% url 'contact' %}"><img src="{% static 'onlineformapro.png' %}" alt="onlineformapro" />'+
-'<p>{{ object.address }} {{ object.zipcode }} {{ object.location }}</p>'
-
+'<img src="{% static 'onlineformapro.png' %}" alt="onlineformapro"/>'+
+'<p>{{ object.address }} {{ object.zipcode }} {{ object.location }}</p>'+
+'<a class href="{% url 'contact' %}"><input type="submit" value="Contact us" class="btn btn-primary"/>'

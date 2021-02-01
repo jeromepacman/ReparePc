@@ -1,16 +1,17 @@
 {% extends 'base.html' %}
-{% load static %}
 {% load crispy_forms_filters %}
+{% load static %}
+
 {% load crispy_forms_tags %}
 {% block title %} GeekGarage|Contact {% endblock title %}
 {% block content %}
-        <div class="mt-5 bg-gray">
+        <div class="mt-5">
             <form method="post">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-6 offset-3 text-cyan">
                         {{ form | crispy }}
-                        <input type="submit" value="Save">
+                        <input type="submit" value="Send" class="btn btn-outline-primary">
                     </div>
                 </div>
             </form>
