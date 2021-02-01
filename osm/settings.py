@@ -131,3 +131,5 @@ JAZZMIN_SETTINGS = {
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+EMAIL_HOST_USER = 'contact@onlineformapro'

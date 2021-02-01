@@ -1,7 +1,9 @@
+from django.conf import settings
 from django.shortcuts import reverse
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMessage
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic import CreateView, ListView, DeleteView, FormView
+from django.template.loader import render_to_string
 from .forms import MyOsmForm, ContactForm
 from .models import MyOsm
 
@@ -10,17 +12,17 @@ class MyOsmView(SuccessMessageMixin, CreateView):
     template_name="openstreetmap/myosm_form.html"
     form_class=MyOsmForm
     model=MyOsm
-    success_message = "location added"
+    success_message="location added"
 
     def get_success_url(self):
         return reverse("index")
 
 
 class MyOsmDeleteView(SuccessMessageMixin, DeleteView):
-    template_name = "openstreetmap/myosm_delete.html"
-    model = MyOsm
-    success_message = "location deleted"
-    success_url = '/'
+    template_name="openstreetmap/myosm_delete.html"
+    model=MyOsm
+    success_message="location deleted"
+    success_url='/'
 
 
 class IndexListView(ListView):
@@ -31,7 +33,7 @@ class IndexListView(ListView):
 class ContactFormView(SuccessMessageMixin, FormView):
     template_name='contact.html'
     form_class=ContactForm
-    success_message = 'Your message has been sent'
+    success_message='Your message has been sent'
     success_url='/'
 
     def form_valid(self, form):
@@ -41,5 +43,8 @@ class ContactFormView(SuccessMessageMixin, FormView):
         send_mail(
             subject, message, email, ['contact@onlineformapro.com']
         )
-        return super(ContactFormView, self).form_valid(form)
+        feedback=render_to_string('confirm.html', {'name': subject})
+        email_conf=EmailMessage("Your request is in process", feedback, settings.EMAIL_HOST_USER, [email])
+        email_conf.send()
 
+        return super(ContactFormView, self).form_valid(form)
