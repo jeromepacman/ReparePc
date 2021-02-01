@@ -2,4 +2,8 @@
 
 '<img src="{% static 'onlineformapro.png' %}" alt="onlineformapro"/>'+
 '<p>{{ object.address }} {{ object.zipcode }} {{ object.location }}</p>'+
-'<a class href="{% url 'contact' %}"><input type="submit" value="Contact us" class="btn btn-primary"/>'
+{% if request.user.is_authenticated %}
+    '<a class href="{% url 'delete' pk=object.pk %}"><input type="submit" value="Delete" class="btn btn-warning"/>'
+    {% else %}
+    '<a class href="{% url 'contact' %}"><input type="submit" value="Contact us" class="btn btn-primary"/>'
+{% endif %}

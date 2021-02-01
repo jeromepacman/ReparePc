@@ -1,7 +1,7 @@
-from django.shortcuts import reverse, render
+from django.shortcuts import reverse
 from django.core.mail import send_mail
 from django.contrib.messages.views import SuccessMessageMixin
-from django.views.generic import CreateView, ListView, FormView
+from django.views.generic import CreateView, ListView, DeleteView, FormView
 from .forms import MyOsmForm, ContactForm
 from .models import MyOsm
 
@@ -14,6 +14,13 @@ class MyOsmView(SuccessMessageMixin, CreateView):
 
     def get_success_url(self):
         return reverse("index")
+
+
+class MyOsmDeleteView(SuccessMessageMixin, DeleteView):
+    template_name = "openstreetmap/myosm_delete.html"
+    model = MyOsm
+    success_message = "location deleted"
+    success_url = '/'
 
 
 class IndexListView(ListView):
@@ -36,6 +43,3 @@ class ContactFormView(SuccessMessageMixin, FormView):
         )
         return super(ContactFormView, self).form_valid(form)
 
-
-def leaf_mapview(request):
-    return render(request, 'leafmap.html', {})

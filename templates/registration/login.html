@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+
+
+{% block title %}GeekGarage|Login{% endblock title %}
+
+{% block content %}
+<form method="post">
+    <div class="mt-5">
+        {%  csrf_token %}
+        <div class="row">
+            <div class="col-6 offset-3 text-cyan">
+                {{ form|crispy }}
+                <input type="submit" value="Log in" class="btn btn-outline-primary"/>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}
