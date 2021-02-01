@@ -1,4 +1,4 @@
-from django.shortcuts import reverse
+from django.shortcuts import reverse, render
 from django.core.mail import send_mail
 
 from django.views.generic import CreateView, ListView, FormView
@@ -26,10 +26,14 @@ class ContactFormView(FormView):
     success_url='/'
 
     def form_valid(self, form):
-        email = form.cleaned_data.get('email')
-        subject = form.cleaned_data.get('name')
-        message = form.cleaned_data.get('message')
+        email=form.cleaned_data.get('email')
+        subject=form.cleaned_data.get('name')
+        message=form.cleaned_data.get('message')
         send_mail(
             subject, message, email, ['contact@onlineformapro.com']
         )
         return super(ContactFormView, self).form_valid(form)
+
+
+def leaf_mapview(request):
+    return render(request, 'leafmap.html', {})

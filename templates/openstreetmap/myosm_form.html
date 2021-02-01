@@ -19,11 +19,12 @@
     <body>
 
         <div class="mt-5">
+            {{ form.media }}
             <form action="" method="post">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-6 offset-3">
-                        {{ form | crispy }}
+                        {{ form|crispy }}
                         <input type="submit" value="Save" />
                     </div>
                 </div>

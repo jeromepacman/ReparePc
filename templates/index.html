@@ -1,15 +1,8 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {% load static %}
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-  crossorigin=""/>
+{% block title %} GeegGarage|Index {% endblock title %}
 
-    <title>Geek Garage</title>
+{% block content %}
 
     <style type="text/css">
 
@@ -17,37 +10,8 @@
             height: 400px;
         }
     </style>
-</head>
 
-<body>
-    <header>
-        <img src=" {% static 'img/nerds-logo-new.png' %}" alt="nerds_logo" width="500" height="90" >
-        <img src=" {% static 'img/shopcrop.jpg' %}" alt="shop"  height="200">
-    </header>
 
-    <nav>
-        <ul>
-            <li>
-                <a href="/">Home</a>
-            </li>
-            <li>
-                <a href="{% url 'contact' %}">Contact</a>
-            </li>
-              {% if not request.user.is_authenticated %}
-            <li>
-                <a href="#">Login</a>
-            </li>
-                {% endif %}
-              {% if request.user.is_authenticated %}
-            <li>
-                <a href="{% url 'create' %}">Position</a>
-            </li>
-            <li>
-                <a href="#">Logout</a>
-            </li>
-              {%  endif %}
-        </ul>
-    </nav>
     <h3>Choose your local center</h3>
 
     <div id="map">
@@ -80,17 +44,6 @@
             initMap();
         };
     </script>
+{%  endblock %}
 
-    <footer>
-        <div class="logo">
-            <img src="{% static 'img/nerd.png' %}" width="30%" height="50">
-        </div>
-    </footer>
 
-<script
-        src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-        crossorigin="">
-</script>
-</body>
-</html>
