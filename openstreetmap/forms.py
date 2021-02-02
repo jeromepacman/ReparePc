@@ -1,5 +1,5 @@
 from django import forms
-from .models import MyOsm
+from .models import MyOsm, Customer
 
 
 class MyOsmForm(forms.ModelForm):
@@ -8,8 +8,9 @@ class MyOsmForm(forms.ModelForm):
         fields = '__all__'
 
 
-class ContactForm(forms.Form):
-    name=forms.CharField()
-    email=forms.EmailField()
-    message=forms.CharField(widget=forms.Textarea)
+class ContactForm(forms.ModelForm):
+
+    class Meta:
+        model=Customer
+        exclude= ['center']
 

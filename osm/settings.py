@@ -27,7 +27,6 @@ INSTALLED_APPS=[
     'django.contrib.staticfiles',
 
     'osm_field',
-    'leaflet',
     'crispy_forms',
     'openstreetmap.apps.OpenstreetmapConfig',
 

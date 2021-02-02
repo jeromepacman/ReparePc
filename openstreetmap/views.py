@@ -38,6 +38,7 @@ class ContactFormView(SuccessMessageMixin, FormView):
     success_url='/'
 
     def form_valid(self, form):
+
         email=form.cleaned_data.get('email')
         subject=form.cleaned_data.get('name')
         message=form.cleaned_data.get('message')
