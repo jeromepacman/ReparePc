@@ -38,7 +38,6 @@ class ContactFormView(SuccessMessageMixin, FormView):
     success_url='/'
 
     def form_valid(self, form):
-
         email=form.cleaned_data.get('email')
         subject=form.cleaned_data.get('name')
         message=form.cleaned_data.get('message')
@@ -48,5 +47,6 @@ class ContactFormView(SuccessMessageMixin, FormView):
         feedback=render_to_string('confirm.html', {'name': subject})
         email_conf=EmailMessage("Your request is in process", feedback, settings.EMAIL_HOST_USER, [email])
         email_conf.send()
+        form.save(commit=True)
 
         return super(ContactFormView, self).form_valid(form)

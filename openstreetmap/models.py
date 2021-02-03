@@ -18,7 +18,8 @@ class Customer(models.Model):
     email=models.EmailField()
     message=models.TextField()
     date=models.DateField(auto_now_add=True)
-    center=models.ForeignKey(MyOsm, on_delete=models.CASCADE)
+    center=models.ForeignKey(MyOsm, on_delete=models.CASCADE, editable=False)
 
     def __str__(self):
         return self.name
+
