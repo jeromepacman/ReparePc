@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from openstreetmap.views import MyOsmView, IndexListView, MyOsmDeleteView,  ContactFormView
+from openstreetmap.views import MyOsmView, IndexListView, MyOsmDeleteView, ContactFormView, CenterMessagesListView, CenterMessagesDetailView
 
 
 urlpatterns=[
@@ -10,5 +10,7 @@ urlpatterns=[
     path('create/', MyOsmView.as_view(), name='create'),
     path('<int:pk>/delete/', MyOsmDeleteView.as_view(), name='delete'),
     path('contact/', ContactFormView.as_view(), name='contact'),
+    path('messages/', CenterMessagesListView.as_view(), name='messages'),
+    path('<int:pk>/message_detail/', CenterMessagesDetailView.as_view(), name='detail')
 
 ]

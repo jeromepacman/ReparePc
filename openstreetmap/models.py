@@ -3,7 +3,7 @@ from osm_field.fields import LatitudeField, LongitudeField, OSMField
 
 
 class MyOsm(models.Model):
-    location=OSMField("Location (address, zipcode city)")
+    location=OSMField()
     email=models.EmailField(blank=True)
     phone=models.IntegerField(null=True, blank=True)
     location_lat=LatitudeField()
@@ -18,8 +18,9 @@ class Customer(models.Model):
     email=models.EmailField()
     message=models.TextField()
     date=models.DateField(auto_now_add=True)
-    center=models.ForeignKey(MyOsm, on_delete=models.CASCADE)
+    center=models.ForeignKey(MyOsm, null=True, blank=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.name
+
 
