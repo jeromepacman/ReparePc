@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+          <div class="tbl-header">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Message</th>
+                  <th>Center</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="tbl-content">
+            <table>
+              <tbody>
+              {%  for object in object_list %}
+                <tr>
+                    <td><a href="{% url 'detail' object.pk %}"><b>{{ object.name }}</b></a></td>
+                    <td>{{ object.email }}</td>
+                    <td><i><a href="{% url 'detail' object.pk %}">{{ object.message | slice:":20" }}...</a></i></td>
+                    <td>{{ object.center }}</td>
+                    <td>{{ object.date }}</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+    </section>
+
+
+    <script>
+        $(window).on("load resize ", function() {
+            let scrollWidth;
+            scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+            $('.tbl-header').css({'padding-right':scrollWidth});
+        }).resize();
+    </script>
+
+{% endblock %}

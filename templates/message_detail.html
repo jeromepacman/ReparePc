@@ -1,0 +1,24 @@
+{%  extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <div class="tbl-header">
+            <table>
+              <thead>
+                <tr>
+                  <th>From: {{ object.name }}</th>
+                  <th>{{ object.email }}</th>
+                  <th>Posted: {{ object.date }}</th>
+                </tr>
+              </thead>
+            </table>
+        </div>
+        <div class="tbl-content mt-5">
+            <table>
+              <tbody>
+                {{ object.message }}
+              </tbody>
+            </table>
+        </div>
+    </section>
+{%  endblock %}
