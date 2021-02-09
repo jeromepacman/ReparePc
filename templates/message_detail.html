@@ -1,24 +1,40 @@
 {%  extends 'base.html' %}
 
 {% block content %}
-    <section>
-        <div class="tbl-header">
-            <table>
-              <thead>
-                <tr>
-                  <th>From: {{ object.name }}</th>
-                  <th>{{ object.email }}</th>
-                  <th>Posted: {{ object.date }}</th>
-                </tr>
-              </thead>
-            </table>
-        </div>
-        <div class="tbl-content mt-5">
-            <table>
-              <tbody>
-                {{ object.message }}
-              </tbody>
-            </table>
+     <!-- Page Banner -->
+        <section class="pageBanner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="banner_content text-center">
+                            <h4><a href="/">home</a> - <a href="{% url 'messages' %}">Messages</h4>
+                            <h2>{{ object.name }} </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page Banner -->
+    <section class="commonSection">
+        <div class=container>
+            <div class="tbl-header">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>{{ object.name }}</th>
+                      <th>{{ object.email }}</th>
+                      <th>Posted: {{ object.date }}</th>
+                    </tr>
+                  </thead>
+                </table>
+            </div>
+            <div class="tbl-content mt-5">
+                <table>
+                  <tbody>
+                    {{ object.message }}
+                  </tbody>
+                </table>
+            </div>
         </div>
     </section>
 {%  endblock %}

@@ -7,7 +7,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}"/>
@@ -19,121 +19,184 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/preset.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/theme.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/presets/color1.css' %}" id="colorChange"/>
+
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-  crossorigin=""/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <!-- Favicon Icon -->
-    <link rel="icon"  type="image/png" href="{% static 'onlineformapro.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'onlineformapro.png' %}">
 </head>
-    <body>
- <!-- Color Preset -->
-        <div class="color_settings">
-            <a href="javascript:void(0);" class="switch-btn"><i class="fa fa-cogs"></i></a>
-            <div class="color_preset">
-                <h4>Choose color skin</h4>
-                <button id="color1" class="active"><img src="{% static 'images/settings/1.png' %}" width="30" height="20" alt="color1"></button>
-                <button id="color2"><img src="{% static 'images/settings/2.png' %}" width="30" height="20" alt="color1"></button>
-                <button id="color3"><img src="{% static 'images/settings/3.png' %}" width="30" height="20" alt="color1"></button>
-                <button id="color4"><img src="{% static 'images/settings/4.png' %}" width="30" height="20" alt="color1"></button>
-                <button id="color5"><img src="{% static 'images/settings/5.png' %}" width="30" height="20" alt="color1"></button>
-                <button id="color6"><img src="{% static 'images/settings/6.png' %}" width="30" height="20" alt="color1"></button>
-                <button id="color7"><img src="{% static 'images/settings/7.png' %}" width="30" height="20" alt="color1"></button>
-                <button id="color8"><img src="{% static 'images/settings/8.png' %}" width="30" height="20" alt="color1"></button>
-                <button id="color9"><img src="{% static 'images/settings/9.png' %}" width="30" height="20" alt="color1"></button>
-                <button id="color10"><img src="{% static 'images/settings/10.png' %}" width="30" height="20" alt="color1"></button>
-                <button id="color11"><img src="{% static 'images/settings/11.png' %}" width="30" height="20" alt="color1"></button>
-                <button id="color12"><img src="{% static 'images/settings/12.png' %}" width="30" height="20" alt="color1"></button>
-                <button id="color13"><img src="{% static 'images/settings/13.png' %}" width="30" height="20" alt="color1"></button>
-                <button id="color14"><img src="{% static 'images/settings/14.png' %}" width="30" height="20" alt="color1"></button>
-                <button id="color15"><img src="{% static 'images/settings/15.png' %}" width="30" height="20" alt="color1"></button>
+<body>
+ <!-- Preloading -->
+        <div class="preloader text-center">
+            <div class="la-ball-circus la-2x">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
         </div>
-
-        {% block content %}
-        {% endblock content %}
-    <!-- Footer Section -->
-        <footer class="footer_1">
-            <div class="container">
+             <!-- Header 01 -->
+        <header class="header_01 black_color" id="header">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-5 col-sm-6 col-md-5">
-                        <aside class="widget aboutwidget">
-                            <a href="#"><img src="{% static 'images/foo_logo.png' %}" alt="foot"></a>
-                            <p>
-                                Welcome to our web design agency. Lorem ipsum is simply free text dolor sit amet consectetur adipisicing elit.
-                                Tempore corrupti temporibus fuga earum asperiores, alias excepturi sit mpedit fugit laudantium.
-                            </p>
-                        </aside>
+                    <div class="col-lg-2 col-sm-3 col-md-3">
+                        <div class="logo">
+                            <a href="{% url 'index' %}"><img src="{% static 'images/onlineformapro2.png'%}" alt=" logo"/></a>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-sm-4 col-md-4">
-                        <aside class="widget contact_widgets">
-                            <h3 class="widget_title">contact</h3>
-                            <p>
-                                66 Broklyn Street, New York<br>
-                                United States of America
-                            </p>
-                            <p>P: 666 888 000</p>
-                            <p>E: <a href="#">needhelp@meipaly.com</a></p>
-                        </aside>
-                    </div>
-                    <div class="col-lg-3 col-sm-2 col-md-3">
-                        <aside class="widget social_widget">
-                            <h3 class="widget_title">social</h3>
+                    <div class="col-lg-8 col-sm-7 col-md-7">
+                        <nav class="mainmenu text-center">
                             <ul>
-                                <li><a href="#"><i class="fa fa-twitter"></i>Twitter</a></li>
-                                <li><a href="#"><i class="fa fa-facebook-square"></i>Facebook</a></li>
-                                <li><a href="#"><i class="fa fa-youtube-play"></i>Youtube</a></li>
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
+                                <li><a href="{% url 'login' %}">Login</a></li>
+                                <li><a href="{% url 'create' %}">Ajouter un centre</a></li>
+                                <li><a href="{% url 'messages' %}">Messages</a></li>
+
                             </ul>
-                        </aside>
+                        </nav>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12 text-center">
-                        <div class="copyright">
-                            © copyright 2019 by <a href="#">Layerdrops.com</a>
+                    <div class="col-lg-2 col-sm-2 col-md-2">
+                        <div class="navigator text-right">
+
+                            <a href="javascript:void(0);" class="menu mobilemenu hidden-sm hidden-md hidden-lg"><i class="mei-menu"></i></a>
+                            <a id="open-overlay-nav" class="menu hamburger hidden-xs" href="javascript:void(0);"><i class="mei-menu"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- Footer Section -->
+        </header>
+        <!-- Header 01 -->
 
-        <!-- Bact To To -->
-        <a id="backToTop" href="#" class=""><i class="fa fa-angle-double-up"></i></a>
-        <!-- Bact To To -->
+        <!-- PopUP Menu -->
+        <div class="popup popup__menu">
+            <a href="" id="close-popup" class="close-popup"></a>
+            <div class="container mobileContainer">
+                <div class="row">
+                    <div class="col-lg-12 text-left">
+                        <div class="logo2">
+                            <a href="{% url 'index' %}"><img src="{% static 'images/onlineformapro.png' %}" alt="onlineformaprologo"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="popup-inner">
+                            <div class="dl-menu__wrap dl-menuwrapper">
+                                <ul class="dl-menu dl-menuopen">
+                                    <li class="menu-item-has-children">
+                                        <a href="javascript:void(0);">home</a>
+                                        <ul class="dl-submenu">
+                                            <li><a href="{% url 'index' %}">Home</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li class="menu-item-has-children"><a href="javascript:void(0);">services</a>
+                                        <ul class="dl-submenu">
+                                            <li><a href="services.html">Service</a></li>
+                                            <li><a href="service_detail.html">Service Detail</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="javascript:void(0);">Portfolio</a>
+                                        <ul class="dl-submenu">
+                                            <li><a href="portfolio.html">Portfolio v1</a></li>
+                                            <li><a href="portfolio2.html">Portfolio v2</a></li>
+                                            <li><a href="portfolio_detail.html">Portfolio Detail</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="javascript:void(0);">Blog</a>
+                                        <ul class="dl-submenu">
+                                            <li><a href="blog.html">Blog v1</a></li>
+                                            <li><a href="blog2.html">Blog v2</a></li>
+                                            <li><a href="blog3.html">Blog v3</a></li>
+                                            <li><a href="blog_single.html">Blog Single</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 col-xs-12 text-left">
+                        <ul class="footer__contacts text-left">
+                            <li>Tel: 666 888 000</li>
+                            <li>Email: contact@onlineformapro.com</li>
+                            <li>Adresse: 19 rue de Praley, 70000 Vesoul</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- PopUP Menu -->
 
-        <!-- Include All JS -->
-        <script src="{% static 'js/jquery.js' %}"></script>
-        <script src="{% static 'js/bootstrap.min.js '%}"></script>
-        <script src="{% static 'js/modernizr.custom.js '%}"></script>
-        <script src="{% static 'js/gmaps.js' %}"></script>
-        <script src="https://maps.google.com/maps/api/js?key=AIzaSyDTPlX-43R1TpcQUyWjFgiSfL_BiGxslZU"></script>
-        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="">
-        </script>
-        <script src="{% static 'js/jquery.themepunch.revolution.min.js' %}"></script>
-        <script src="{%  static 'js/jquery.themepunch.tools.min.js' %}"></script>{% static '
-        <!-- Rev slider Add on Start -->
-        <script src="{% static 'js/extensions/revolution.extension.actions.min.js' %}"></script>
-        <script src="{% static 'js/extensions/revolution.extension.carousel.min.js' %}"></script>
-        <script src="{% static 'js/extensions/revolution.extension.kenburn.min.js' %}"></script>
-        <script src="{% static 'js/extensions/revolution.extension.migration.min.js' %}"></script>
-        <script src="{% static 'js/extensions/revolution.extension.parallax.min.js' %}"></script>
-        <script src="{% static 'js/extensions/revolution.extension.slideanims.min.js' %}"></script>
-        <script src="{% static 'js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
-        <script src="{% static 'js/extensions/revolution.extension.navigation.min.js' %}"></script>
-        <script src="{% static 'js/extensions/revolution.extension.video.min.js' %}"></script>
-        <!-- Rev slider Add on End -->
-        <script src="{% static 'js/dlmenu.js' %}"></script>
-        <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
-        <script src="{% static 'js/mixer.js' %}"></script>
-        <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
-        <script src="{% static 'js/owl.carousel.js' %}"></script>
-        <script src="{% static 'js/slick.js' %}"></script>
-        <script src="{% static 'js/jquery.appear.js' %}"></script>
-        <script src="{% static 'js/theme.js' %}"></script>
-        <!-- Include All JS -->
+{% block content %}
+{% endblock content %}
+
+<!-- Footer Section -->
+<footer class="footer_1">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <aside class="widget aboutwidget">
+                    <a href="#"><img src="{% static 'images/onlineformapro.png' %}" alt="foot"></a>
+                    <p>
+                        19 rue de Praley, 70000<br>
+                        Vesoul
+                    </p>
+                    <p>tel: 666 888 000</p>
+                    <a href="#">contact@onlineformapro.com</a>
+                </aside>
+            </div>
+        </div>
+    <!--    <div class="row">
+            <div class="col-lg-12 col-sm-12 text-center">
+                <div class="copyright">
+                    © copyright 2019 by <a href="#">Layerdrops.com</a>
+                </div>
+            </div> -->
+    </div>
+</footer>
+<!-- Footer Section -->
+
+<!-- Bact To To -->
+<a id="backToTop" href="#" class=""><i class="fa fa-angle-double-up"></i></a>
+<!-- Bact To To -->
+
+<!-- Include All JS -->
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js ' %}"></script>
+<script src="{% static 'js/modernizr.custom.js ' %}"></script>
+<script src="{% static 'js/gmaps.js' %}"></script>
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyDTPlX-43R1TpcQUyWjFgiSfL_BiGxslZU"></script>
+<script src="{% static 'js/jquery.themepunch.revolution.min.js' %}"></script>
+<script src="{% static 'js/jquery.themepunch.tools.min.js' %}"></script>
+<!-- Rev slider Add on Start -->
+<script src="{% static 'js/extensions/revolution.extension.actions.min.js' %}"></script>
+<script src="{% static 'js/extensions/revolution.extension.carousel.min.js' %}"></script>
+<script src="{% static 'js/extensions/revolution.extension.kenburn.min.js' %}"></script>
+<script src="{% static 'js/extensions/revolution.extension.migration.min.js' %}"></script>
+<script src="{% static 'js/extensions/revolution.extension.parallax.min.js' %}"></script>
+<script src="{% static 'js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+<script src="{% static 'js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+<script src="{% static 'js/extensions/revolution.extension.navigation.min.js' %}"></script>
+<script src="{% static 'js/extensions/revolution.extension.video.min.js' %}"></script>
+<!-- Rev slider Add on End -->
+<script src="{% static 'js/dlmenu.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+<script src="{% static 'js/mixer.js' %}"></script>
+<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'js/owl.carousel.js' %}"></script>
+<script src="{% static 'js/slick.js' %}"></script>
+<script src="{% static 'js/jquery.appear.js' %}"></script>
+<script src="{% static 'js/theme.js' %}"></script>
+<!-- Include All JS -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
 
-    </body>
+</body>
 </html>

@@ -1,50 +1,368 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %} GeegGarage {% endblock title %}
 
 {% block content %}
 
-    <style type="text/css">
+        <!-- Revolution Slider -->
+        <section class="rev_slider slider_2">
+            <div class="rev_slider_wrapper">
+                <div id="rev_slider_2" class="rev_slider" data-version="5.4.5">
+                    <ul>
+                        <!-- MINIMUM SLIDE STRUCTURE -->
+                        <li data-transition="random" data-masterspeed="1000">
+                            <!-- SLIDE'S MAIN BACKGROUND IMAGE -->
+                            <img src="{% static 'images/slider/2_1.jpg' %}" alt="Sky" class="rev-slidebg">
+                            <div class="tp-caption tp-resizeme normalWraping layer_1"
 
-        #map {
-            height: 500px;
-            width:80%;
-        }
-    </style>
+                                 data-frames='[{"delay":1200,"speed":2000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},
+                                 {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+
+                                 data-x="left"
+                                 data-y="center"
+                                 data-hoffset="['0', '100', '120', '0']"
+                                 data-voffset="['-184', '-170', '-140', '-90']"
+                                 data-width="100%"
+                                 data-height="['auto]"
+                                 data-whitesapce="['normal']"
+                                 data-fontsize="20"
+                                 data-lineheight="36"
+                                 data-fontweight="400"
+                                 data-letterspacing="2"
+                                 data-color="#000"
+                                 data-textAlign="['left', 'left', 'left', 'center']"
+                                 >BIENVENUE CHEZ ONLINEFORMAPRO</div>
+                            <div class="tp-caption tp-resizeme normalWraping layer_2"
+
+                                 data-frames='[{"delay":1600,"speed":2000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},
+                                 {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+
+                                 data-x="left"
+                                 data-y="center"
+                                 data-hoffset="['0', '100', '120', '0']"
+                                 data-voffset="['8', '0', '0', '0']"
+                                 data-width="100%"
+                                 data-height="['auto]"
+                                 data-whitesapce="['normal']"
+                                 data-word-wrap="['normal']"
+                                 data-white-break="['break-all']"
+                                 data-fontsize="['110', '80', '70', '40']"
+                                 data-lineheight="['112', '90', '80', '44']"
+                                 data-fontweight="700"
+                                 data-letterspacing="['4.4', '4.4', '4.4', '2']"
+                                 data-color="#000"
+                                 data-textAlign="['left', 'left', 'left', 'center']"
+                                 >REPARE<br>PC<br>ONLINE.</div>
+                            <div class="tp-caption tp-resizeme normalWraping layer_3"
+
+                                 data-frames='[{"delay":2000,"speed":2000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},
+                                 {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+
+                                 data-x="left"
+                                 data-y="center"
+                                 data-hoffset="['0', '100', '120', '0']"
+                                 data-voffset="['273', '220', '190', '140']"
+                                 data-width="100%"
+                                 data-height="['auto]"
+                                 data-whitesapce="['normal']"
+                                 data-fontsize="16"
+                                 data-lineheight=""
+                                 data-fontweight="400"
+                                 data-textAlign="['left', 'left', 'left', 'center']"
+                                 ></div>
+                        </li>
+                        <li data-transition="random" data-masterspeed="1000">
+                            <!-- SLIDE'S MAIN BACKGROUND IMAGE -->
+                            <img src="{% static 'images/slider/2_2.jpg' %}" alt="Sky" class="rev-slidebg">
+                            <div class="tp-caption tp-resizeme normalWraping layer_1"
+
+                                 data-frames='[{"delay":1200,"speed":2000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},
+                                 {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+
+                                 data-x="left"
+                                 data-y="center"
+                                 data-hoffset="['0', '100', '120', '0']"
+                                 data-voffset="['-184', '-170', '-140', '-90']"
+                                 data-width="100%"
+                                 data-height="['auto]"
+                                 data-whitesapce="['normal']"
+                                 data-fontsize="20"
+                                 data-lineheight="36"
+                                 data-fontweight="400"
+                                 data-letterspacing="2"
+                                 data-color="#000"
+                                 data-textAlign="['left', 'left', 'left', 'center']"
+                                 >BIENVENUE CHEZ ONLINEFORMAPRO</div>
+                            <div class="tp-caption tp-resizeme normalWraping layer_2"
+
+                                 data-frames='[{"delay":1600,"speed":2000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},
+                                 {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+
+                                 data-x="left"
+                                 data-y="center"
+                                 data-hoffset="['0', '100', '120', '0']"
+                                 data-voffset="['8', '0', '0', '0']"
+                                 data-width="100%"
+                                 data-height="['auto]"
+                                 data-whitesapce="['normal']"
+                                 data-word-wrap="['normal']"
+                                 data-white-break="['break-all']"
+                                 data-fontsize="['110', '80', '70', '40']"
+                                 data-lineheight="['112', '90', '80', '44']"
+                                 data-fontweight="700"
+                                 data-letterspacing="['4.4', '4.4', '4.4', '2']"
+                                 data-color="#000"
+                                 data-textAlign="['left', 'left', 'left', 'center']"
+                                 >REPARE<br>PC<br>ONLINE.</div>
+                            <div class="tp-caption tp-resizeme normalWraping layer_3"
+
+                                 data-frames='[{"delay":2000,"speed":2000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},
+                                 {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+
+                                 data-x="left"
+                                 data-y="center"
+                                 data-hoffset="['0', '100', '120', '0']"
+                                 data-voffset="['273', '220', '190', '140']"
+                                 data-width="100%"
+                                 data-height="['auto]"
+                                 data-whitesapce="['normal']"
+                                 data-fontsize="16"
+                                 data-lineheight=""
+                                 data-fontweight="400"
+                                 data-textAlign="['left', 'left', 'left', 'center']"
+                                 ></div>
+                        </li>
+                        <li data-transition="random" data-masterspeed="1000">
+                            <!-- SLIDE'S MAIN BACKGROUND IMAGE -->
+                            <img src="{% static 'images/slider/2_3.jpg' %}" alt="Sky" class="rev-slidebg">
+                            <div class="tp-caption tp-resizeme normalWraping layer_1"
+
+                                 data-frames='[{"delay":1200,"speed":2000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},
+                                 {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+
+                                 data-x="left"
+                                 data-y="center"
+                                 data-hoffset="['0', '100', '120', '0']"
+                                 data-voffset="['-184', '-170', '-140', '-90']"
+                                 data-width="100%"
+                                 data-height="['auto]"
+                                 data-whitesapce="['normal']"
+                                 data-fontsize="20"
+                                 data-lineheight="36"
+                                 data-fontweight="400"
+                                 data-letterspacing="2"
+                                 data-color="#000"
+                                 data-textAlign="['left', 'left', 'left', 'center']"
+                                 >BIENVENUE CHEZ ONLINEFORMAPRO</div>
+                            <div class="tp-caption tp-resizeme normalWraping layer_2"
+
+                                 data-frames='[{"delay":1600,"speed":2000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},
+                                 {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+
+                                 data-x="left"
+                                 data-y="center"
+                                 data-hoffset="['0', '100', '120', '0']"
+                                 data-voffset="['8', '0', '0', '0']"
+                                 data-width="100%"
+                                 data-height="['auto]"
+                                 data-whitesapce="['normal']"
+                                 data-word-wrap="['normal']"
+                                 data-white-break="['break-all']"
+                                 data-fontsize="['110', '80', '70', '40']"
+                                 data-lineheight="['112', '90', '80', '44']"
+                                 data-fontweight="700"
+                                 data-letterspacing="['4.4', '4.4', '4.4', '2']"
+                                 data-color="#000"
+                                 data-textAlign="['left', 'left', 'left', 'center']"
+                                 >REPARE<br>PC<br>ONLINE.</div>
+                            <div class="tp-caption tp-resizeme normalWraping layer_3"
+
+                                 data-frames='[{"delay":2000,"speed":2000,"frame":"0","from":"y:50px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},
+                                 {"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+
+                                 data-x="left"
+                                 data-y="center"
+                                 data-hoffset="['0', '100', '120', '0']"
+                                 data-voffset="['273', '220', '190', '140']"
+                                 data-width="100%"
+                                 data-height="['auto]"
+                                 data-whitesapce="['normal']"
+                                 data-fontsize="16"
+                                 data-lineheight=""
+                                 data-fontweight="400"
+                                 data-textAlign="['left', 'left', 'left', 'center']"
+                                 ></div>
+                        </li>
+                    </ul><!-- END SLIDES LIST -->
+                </div>
+            </div>
+        </section>
+        <!-- Revolution Slider -->
+
+        <!-- Ready Section -->
+        <section class="commonSection ready_2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-sm-8 col-md-9">
+                        <h2 class="sec_title white">Confiez-nous votre PC!</h2>
+                    </div>
+                    <div class="col-lg-3 col-sm-4 col-md-3 text-right">
+                        <a class="common_btn red_bg" href="contact.html"><span>Contactez-nous</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Ready Section -->
+
+        <!-- Services Section -->
+        <section class="service_section_2 commonSection">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="sec_title">Solutions globales<br> de réparations</h2>
+                        <p class="sec_desc">
+                            Nous sommes dévoués à vous offrir le meilleur service!
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6 col-md-4">
+                        <div class="icon_box_2 text-center">
+                            <h3>REPARATION</h3>
+                            <p>
+                                Sous rendez-vous, nous prenons en charge votre matériel.
+                            </p>
+                            <div class="iconWrap">
+                                <i class="mei-settings"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-md-4">
+                        <div class="icon_box_2 text-center">
+                            <h3>CENTRES</h3>
+                            <p>
+                                Plusieurs centres sont disponibles sur le territoire.
+                            </p>
+                            <div class="iconWrap">
+                                <i class="mei-pie-chart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 col-md-4">
+                        <div class="icon_box_2 text-center">
+                            <h3>EXPERTS</h3>
+                            <p>
+                                Décrivez votre problème, on vous propose une solution
+                            </p>
+                            <div class="iconWrap">
+                                <i class="mei-transfer"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services Section -->
+
+        <!-- Open Street Map -->
+        <section>
+            <style type="text/css">
+
+                #map {
+                    height: 600px;
+                    width:60%;
+                    margin-bottom: 100px;
+                }
+            </style>
+
+                <div id="map">
+                    <!-- display map -->
+                </div>
+                <script type="text/javascript">
+
+                    var lat = 47.222990;
+                    var lon = 2.065970;
+
+                    function initMap() {
+
+                        citymap = L.map('map').setView([lat, lon], 6);
+
+                        L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+
+                            attribution: '© OpenStreetMap/ODbL',
+                            minZoom: 6,
+                            maxZoom: 7,
+                        }).addTo(citymap);
 
 
-    <h3>Choose your local center</h3>
+                        {% for object in object_list %}
+                            var marker = L.marker([{{ object.location_lat }}, {{ object.location_lon }}]).addTo(citymap);
+                            marker.bindPopup( {% include 'popup.html' %} );
+                        {% endfor %}
+                    }
 
-    <div id="map">
-        <!-- display map -->
-    </div>
-    <script type="text/javascript">
+                    window.onload = function () {
+                        initMap();
+                    };
+                </script>
+        </section>
 
-        var lat = 47.222990;
-        var lon = 2.065970;
+          <!-- Quote Section -->
 
-        function initMap() {
+        <section class="noPadding">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12 col-sm-6 noPadding">
+                        <div class="btn_link">
+                            <a href="#">Plus de 20 ans à votre service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            citymap = L.map('map').setView([lat, lon], 6);
+        <!-- Featured Section -->
 
-            L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+        <section class="commonSection featured">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-sm-12  col-md-5">
+                        <div class="features_content">
+                            <h4 class="sub_title">nos services</h4>
+                            <h2 class="sec_title">une vraie expérience</h2>
 
-                attribution: '© OpenStreetMap/ODbL',
-                minZoom: 1,
-                maxZoom: 20
-            }).addTo(citymap);
-
-
-            {% for object in object_list %}
-                var marker = L.marker([{{ object.location_lat }}, {{ object.location_lon }}]).addTo(citymap);
-                marker.bindPopup( {% include 'popup.html' %} );
-            {% endfor %}
-        }
-
-        window.onload = function () {
-            initMap();
-        };
-    </script>
-{%  endblock %}
-
-
+                            <div class="singleFeature">
+                                <div class="f_count">01</div>
+                                <h3>Sur rendez-vous</h3>
+                                <p>
+                                    En quelques minutes, nous nous accordons sur un rendez-vous.
+                                </p>
+                            </div>
+                            <div class="singleFeature">
+                                <div class="f_count">02</div>
+                                <h3>Etat de votre commande</h3>
+                                <p>
+                                    On vous prévient par mail à chaque étape de votre commande.
+                                </p>
+                            </div>
+                            <div class="singleFeature">
+                                <div class="f_count">03</div>
+                                <h3>Quelques jours suffisent</h3>
+                                <p>
+                                    La majorité des réparations s'effectue en moins d'une semaine.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-sm-12 col-md-7 noPaddingRight">
+                        <div class="features_img">
+                            <img src="{% static 'images/laptops.jpg' %}" alt=""/>
+                            <div class="img_details">
+                                <h4>Ouvert du lundi au vendredi</h4>
+                                <h4>de 09h a 19h</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}

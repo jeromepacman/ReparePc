@@ -1,99 +1,14 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background-color: whitesmoke;
-}
-
-header {
-    background-color: darkslateblue;
-    display:flex;
-    flex-direction: column;
-}
-
-
-ul {
-    list-style-type: none;
-    margin:0;
-    padding:0;
-    overflow:hidden;
-    background-color: darkslateblue;
-    background-size: cover;
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
-    top: 0;
-}
-
-li {
-    float: left;
-    border-right: 3px solid #ad9884;
-
-}
-li a {
-    text-decoration: none;
-    display: block;
-    padding:10px;
-    font-size: larger;
-    color: whitesmoke;
-    opacity: 0.8;
-}
-li a:hover {
-    text-decoration: none;
-    color: black;
-    background-color: darkorange;
-
-}
-
-img {
-    min-width: 30%;
-    max-width: 100%;
-}
-
-section {
-  margin: 50px;
-}
-
-section a {
-    text-decoration: none;
-}
-section a:hover {
-    text-decoration: none;
-    color: darkorange;
-}
-
-footer {
-
-    left:0;
-    bottom:0;
-    right:0;
-    width:100%;
-    background-color: darkslateblue;
-    margin-top:50px;
-
-}
-.logo img {
-    display: block;
-    padding-top: 5px;
-    margin-left:auto;
-    margin-right:auto;
-    border-radius:10px;
-
-}
 
 h3 {
     text-align: center;
-    margin-top:60px;
-    margin-bottom:0;
 }
 
 #map {
     display: block;
+    position: relative;
     margin-left: auto;
     margin-right: auto;
-    border-block: solid darkblue;
+    border-block: solid #fc0045;
     border-radius: 20px;
 }
 
@@ -103,7 +18,7 @@ table {
 }
 
 .tbl-header {
-  background-color: darkmagenta ;
+  background-color: #e62b4a ;
  }
 
 .tbl-content {
@@ -126,7 +41,7 @@ td {
   vertical-align:middle;
   font-size: 15px;
   color: black;
-  border-bottom: solid 1px darkmagenta;
+  border-bottom: solid 1px #fc0045;
 }
 
 /* for custom scrollbar for webkit browser*/

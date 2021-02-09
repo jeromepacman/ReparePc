@@ -1,0 +1,47 @@
+
+<!-- Open Street Map -->
+
+    <style type="text/css">
+
+        #map {
+            height: 500px;
+            width:80%;
+        }
+    </style>
+
+
+    <h3>Choose your local center</h3>
+
+    <div id="map">
+        <!-- display map -->
+    </div>
+    <script type="text/javascript">
+
+        var lat = 47.222990;
+        var lon = 2.065970;
+
+        function initMap() {
+
+            citymap = L.map('map').setView([lat, lon], 6);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+
+                attribution: '© OpenStreetMap/ODbL',
+                minZoom: 1,
+                maxZoom: 20
+            }).addTo(citymap);
+
+
+            {% for object in object_list %}
+                var marker = L.marker([{{ object.location_lat }}, {{ object.location_lon }}]).addTo(citymap);
+                marker.bindPopup( {% include 'popup.html' %} );
+            {% endfor %}
+        }
+
+        window.onload = function () {
+            initMap();
+        };
+    </script>
+
+
+
