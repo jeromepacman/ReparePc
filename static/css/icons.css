@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'fontello';
-  src: url('../fonts/fontello%EF%B9%9625982426.eot');
-  src: url('../fonts/fontello%EF%B9%9625982426.eot#iefix') format('embedded-opentype'),
-       url('../fonts/fontello%EF%B9%9625982426.woff2') format('woff2'),
-       url('../fonts/fontello%EF%B9%9625982426.woff') format('woff'),
-       url('../fonts/fontello%EF%B9%9625982426.ttf') format('truetype'),
-       url('../fonts/fontello%EF%B9%9625982426.svg#fontello') format('svg');
+  src: url('/static/fonts/fontello.eot');
+  src: url('/staic/fonts/fontello%EF%B9%9625982426.eot#iefix') format('embedded-opentype'),
+       url('/static/fonts/fontello%EF%B9%9625982426.woff2') format('woff2'),
+       url('/static/fonts/fontello%EF%B9%9625982426.woff') format('woff'),
+       url('/static/fonts/fontello%EF%B9%9625982426.ttf') format('truetype'),
+       url('/static/fonts/fontello%EF%B9%9625982426.svg#fontello') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -21,7 +21,7 @@
 */
  
  [class^="mei-"]:before, [class*=" mei-"]:before {
-  font-family: "fontello";
+     font-family: "fontello", serif;
   font-style: normal;
   font-weight: normal;
   speak: none;
