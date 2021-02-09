@@ -36,7 +36,7 @@
 
 
             {% for object in object_list %}
-                var marker = L.marker([ {{ object.location_lat }}, {{ object.location_lon }} ]).addTo(citymap);
+                var marker = L.marker([{{ object.location_lat }}, {{ object.location_lon }}]).addTo(citymap);
                 marker.bindPopup( {% include 'popup.html' %} );
             {% endfor %}
         }

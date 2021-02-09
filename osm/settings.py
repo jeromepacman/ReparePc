@@ -26,8 +26,11 @@ INSTALLED_APPS=[
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    #3rd party apps
     'osm_field',
     'crispy_forms',
+
+    #Loca apps
     'openstreetmap.apps.OpenstreetmapConfig',
 
 

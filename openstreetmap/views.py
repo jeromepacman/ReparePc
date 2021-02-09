@@ -60,3 +60,4 @@ class CenterMessagesListView(LoginRequiredMixin, ListView):
 class CenterMessagesDetailView(LoginRequiredMixin, DetailView):
     template_name='message_detail.html'
     model = Customer
+

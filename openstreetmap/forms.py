@@ -13,4 +13,5 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model=Customer
         fields = '__all__'
+        exclude = ['center']
 
