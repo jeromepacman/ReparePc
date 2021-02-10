@@ -5,5 +5,5 @@
 {% if request.user.is_staff %}
     '<a class href="{% url 'delete' pk=object.pk %}"><input type="submit" value="Delete" class="btn btn-warning"/>'
     {% else %}
-    '<a class href="{% url 'contact' %}"><input type="submit" value="Contact us" class="btn btn-primary"/>'
+    '<a class href="{% url 'contact' %}"><input type="submit" value="Contact us" class="btn btn-danger"/>'
 {% endif %}

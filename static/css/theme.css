@@ -167,7 +167,7 @@
     -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 .black_color.fixedHeader{
-    background: #fff;
+    background: white;
 }
 .black_color .mainmenu ul ul.sub-menu {
     background: #fff;
@@ -176,7 +176,7 @@
     -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 .black_color .mainmenu ul ul.sub-menu:before{
-    border-bottom: 5px solid #FFF;
+    border-bottom: 5px solid white;
 }
 .black_color .mainmenu ul li:hover ul.sub-menu{
     top: 66px;
@@ -666,7 +666,7 @@
     margin: 0 0 44px;
 }
 .icon_box_2 .iconWrap:after{
-    background: url(../images/shadow.png) no-repeat center center / cover;
+    background: url(/static/images/shadow.png) no-repeat center center / cover;
     height: 7px;
     width: 75px;
     position: absolute;
@@ -905,7 +905,7 @@
 .pageBanner {
     position: relative;
     min-height: 465px;
-    background: url(../images/bg/8.jpg) no-repeat center center / cover;
+    background: url(/static/images/bg/8.jpg) no-repeat center center / cover;
     padding-top: 224px;
 }
 .banner_content{
@@ -1076,7 +1076,7 @@
 }
 .meipaly_services_help{
     position: relative;
-    background: url(../images/s3.jpg) no-repeat center center / cover;
+    background: url(/static/images/s3.jpg) no-repeat center center / cover;
     padding: 47px 50px 47px;;
 }
 .meipaly_services_help h4{
@@ -1780,7 +1780,7 @@ textarea.input-form:focus{
     display: none;
 }
 .popupBG{
-    background-image: url(../images/line-maker.svg);
+    background-image: url(/static/images/line-maker.svg);
     background-repeat: repeat;
     background-position: center center;
     padding: 0;
@@ -2096,7 +2096,7 @@ textarea.input-form:focus{
     overflow: hidden;
 }
 .popup.popup__menu {
-    background-image: url(../images/line-maker.svg);
+    background-image: url(/static/images/line-maker.svg);
     background-repeat: repeat;
     background-position: center center;
     padding: 0;
@@ -2227,7 +2227,7 @@ textarea.input-form:focus{
 .dl-menu__wrap .dl-menu .dl-back a:before {
     content: '';
     background-color: transparent;
-    background-image: url(../images/arrow-back.svg);
+    background-image: url(/static/images/arrow-back.svg);
     background-repeat: no-repeat;
     background-position: center center;
     height: 26px;

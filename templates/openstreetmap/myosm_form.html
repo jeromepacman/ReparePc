@@ -1,9 +1,26 @@
-{% extends 'base.html' %}
 {% load crispy_forms_filters %}
 {% load static %}
 {% load crispy_forms_tags %}
 
-{% block content %}
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <title>{% block title %}REPARE PC online{% endblock title %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/settings.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/preset.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/theme.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}"/>
+    <link rel="icon" type="image/png" href="{% static 'onlineformapro.png' %}">
+</head>
+<body>
       <!-- Page Banner -->
         <section class="pageBanner">
             <div class="container">
@@ -18,7 +35,7 @@
             </div>
         </section>
         <!-- Page Banner -->
-    <section>
+    <section class="commonSection">
         <div class="container">
            <script type="text/javascript" src="{% static "js/vendor/jquery-2.1.0.min.js" %}"></script>
             <link href="{% static "css/vendor/leaflet.css" %}" type="text/css" media="screen" rel="stylesheet" />
@@ -26,17 +43,17 @@
             <script type="text/javascript" src="{% static "js/vendor/leaflet.js" %}"></script>
             <script type="text/javascript" src="{% static "js/osm_field.js" %}"></script>
                <div class="mt-5">
-                    {{ form.media }}
+
                     <form action="" method="post">
                         {% csrf_token %}
                         <div class="row">
                             <div class="col-6 offset-3">
                                 {{ form|crispy }}
-                                <input type="submit" value="Save" class="btn btn-outline-primary" />
+                                <input type="submit" value="Save" class="btn btn-primary" />
                             </div>
                         </div>
                     </form>
                 </div>
         </div>
     </section>
-{% endblock %}
+

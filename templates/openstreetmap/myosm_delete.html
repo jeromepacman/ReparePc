@@ -17,16 +17,17 @@
             </div>
         </section>
         <!-- Page Banner -->
-    <section>
-    <form method="post">
-        {% csrf_token %}
-        <div class="row">
-            <div class="col-6 offset-4 mt-5">
-                <h5>Voulez-vous vraiment supprimer ' {{ object }} ' ?</h5>
-                {{ form|crispy }}
-                <input type="submit" value="Confirm" class="btn btn-outline-primary">
+        <section class="commonSection">
+            <div class="container">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-4 offset-4 mt-5">
+                            <h4>Voulez-vous vraiment supprimer ' {{ object }} ' ?</h4>
+                            <input type="submit" value="Confirmer" class="btn btn-primary">
+                        </div>
+                    </div>
+                </form>
             </div>
-        </div>
-    </form>
     </section>
 {% endblock %}
