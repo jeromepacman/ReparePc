@@ -7,6 +7,6 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 DATABASES['default'] = dj_database_url.config(conn_max_age=500)
 
-ALLOWED_HOSTS = ['geekgarage.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 SECURE_SSL_REDIRECT = True
