@@ -10,4 +10,4 @@ DATABASES['default'] = dj_database_url.config(conn_max_age=500)
 
 ALLOWED_HOSTS = ['reparepc.herokuapp.com']
 
-DJANGO
+SECURE_SSL_REDIRECT = True
