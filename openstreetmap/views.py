@@ -22,7 +22,7 @@ class MyOsmView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 class MyOsmDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     template_name="openstreetmap/myosm_delete.html"
     model=MyOsm
-    success_message="location deleted"
+    success_message='centre supprimé'
     success_url='/'
 
 
@@ -59,4 +59,10 @@ class CenterMessagesListView(LoginRequiredMixin, ListView):
 
 class CenterMessagesDetailView(LoginRequiredMixin, DetailView):
     template_name='message_detail.html'
-    model = Customer
+    model=Customer
+
+
+class CenterMessagesDeleteView(LoginRequiredMixin, DeleteView):
+    template_name='message_delete.html'
+    model=Customer
+    success_url='/messages/'

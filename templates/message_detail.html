@@ -21,9 +21,10 @@
                 <table>
                   <thead>
                     <tr>
-                      <th>{{ object.name }}</th>
                       <th>{{ object.email }}</th>
-                      <th>Posted: {{ object.date }}</th>
+                      <th>{{ object.date }}</th>
+
+                        <th><a class href="{% url 'message_delete' pk=object.pk %}"><input type="submit" value="Effacer" class="btn btn-primary text-center"/></th>
                     </tr>
                   </thead>
                 </table>

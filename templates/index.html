@@ -75,8 +75,9 @@
             <style type="text/css">
 
                 #map {
-                    height: 600px;
+                    height: 700px;
                     width:60%;
+                    margin-top: 0;
                     margin-bottom: 100px;
                 }
             </style>
@@ -100,9 +101,15 @@
                             maxZoom: 7,
                         }).addTo(citymap);
 
+                        var onlineicon = L.icon({
+                            iconUrl: '/static/images/icons/logo-03.svg',
+                            iconSize: [28, 75],
+                            popupAnchor: [0,-15]
+                        });
+
 
                         {% for object in object_list %}
-                            var marker = L.marker([{{ object.location_lat }}, {{ object.location_lon }}]).addTo(citymap);
+                            var marker = L.marker([{{ object.location_lat }}, {{ object.location_lon }}], {icon: onlineicon}).addTo(citymap);
                             marker.bindPopup( {% include 'popup.html' %} );
                         {% endfor %}
                     }
