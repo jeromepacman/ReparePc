@@ -10,6 +10,7 @@ urlpatterns=[
     path('create/', MyOsmView.as_view(), name='create'),
     path('<int:pk>/delete/', MyOsmDeleteView.as_view(), name='delete'),
     path('contact/', ContactFormView.as_view(), name='contact'),
+    path('<int:pk>/contact/', ContactFormView.as_view(), name='contact'),
     path('messages/', CenterMessagesListView.as_view(), name='messages'),
     path('<int:pk>/message_detail/', CenterMessagesDetailView.as_view(), name='detail')
 

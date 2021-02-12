@@ -13,7 +13,7 @@ class MyOsmView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     template_name="openstreetmap/myosm_form.html"
     form_class=MyOsmForm
     model=MyOsm
-    success_message="location added"
+    success_message="Centre ajouté"
 
     def get_success_url(self):
         return reverse("index")
@@ -34,11 +34,11 @@ class IndexListView(ListView):
 class ContactFormView(SuccessMessageMixin, FormView):
     template_name='contact.html'
     form_class=ContactForm
-    success_message='Your message has been sent'
+    success_message='Votre message a été envoyé'
     success_url='/'
 
     def form_valid(self, form):
-        form.save(commit=True)
+        form.save()
         email=form.cleaned_data.get('email')
         subject=form.cleaned_data.get('name')
         message=form.cleaned_data.get('message')
@@ -60,4 +60,3 @@ class CenterMessagesListView(LoginRequiredMixin, ListView):
 class CenterMessagesDetailView(LoginRequiredMixin, DetailView):
     template_name='message_detail.html'
     model = Customer
-

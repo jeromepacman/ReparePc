@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 from osm_field.fields import LatitudeField, LongitudeField, OSMField
 
 
@@ -22,5 +23,6 @@ class Customer(models.Model):
 
     def __str__(self):
         return self.name
+
 
 

@@ -2,8 +2,9 @@
 
 '<img src="{% static 'onlineformapro.png' %}" alt="onlineformapro"/>'+
 '<h6>{{ object.location }}</h6>'+
-{% if request.user.is_staff %}
+{% if request.user.is_authenticated %}
+
     '<a class href="{% url 'delete' pk=object.pk %}"><input type="submit" value="Delete" class="btn btn-warning"/>'
     {% else %}
-    '<a class href="{% url 'contact' %}"><input type="submit" value="Contact us" class="btn btn-danger"/>'
+    '<a class href="{% url 'contact' pk=object.pk %}"><input type="submit" value="Contact us" class="btn btn-danger"/>'
 {% endif %}
