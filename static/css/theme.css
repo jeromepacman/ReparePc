@@ -863,13 +863,7 @@
 /*----------------------------------------------------
 / 20. Google Map Section
 ------------------------------------------------------*/
-.gmapsection{
-    position: relative;
-}
-.gmap{
-    width: 100%;
-    height: 609px;
-}
+
 .btn_link{
     position: relative;
     width: 100%;

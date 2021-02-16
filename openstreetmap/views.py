@@ -1,10 +1,11 @@
 from django.conf import settings
-from django.shortcuts import reverse
-from django.core.mail import send_mail, EmailMessage
-from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import CreateView, ListView, DetailView, DeleteView, FormView
+from django.contrib.messages.views import SuccessMessageMixin
+from django.core.mail import send_mail, EmailMessage
+from django.shortcuts import reverse
 from django.template.loader import render_to_string
+from django.views.generic import CreateView, ListView, DetailView, DeleteView, FormView
+
 from .forms import MyOsmForm, ContactForm
 from .models import MyOsm, Customer
 
@@ -38,7 +39,9 @@ class ContactFormView(SuccessMessageMixin, FormView):
     success_url='/'
 
     def form_valid(self, form):
-        form.save()
+        object= form.save(commit=False)
+        form['center'] = Customer.objects.get(id=self.kwargs['pk'])
+        object.save()
         email=form.cleaned_data.get('email')
         subject=form.cleaned_data.get('name')
         message=form.cleaned_data.get('message')

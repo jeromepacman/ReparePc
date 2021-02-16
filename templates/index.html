@@ -3,179 +3,196 @@
 
 {% block content %}
 
-        {% include 'slider.html' %}
+    {% include 'slider.html' %}
 
-        <!-- Ready Section -->
-        <section class="commonSection ready_2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-9 col-sm-8 col-md-9">
-                        <h2 class="sec_title white">Confiez-nous votre PC!</h2>
-                    </div>
-                    <div class="col-lg-3 col-sm-4 col-md-3 text-right">
-                        <a class="common_btn red_bg" href="{% url 'contact' %}"><span>Contactez-nous</span></a>
-                    </div>
+    <!-- Ready Section -->
+    <section class="commonSection ready_2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 col-sm-8 col-md-9">
+                    <h2 class="sec_title white">Confiez-nous votre PC!</h2>
+                </div>
+                <div class="col-lg-3 col-sm-4 col-md-3 text-right">
+                    <a class="common_btn red_bg" href="{% url 'contact' %}"><span>Contactez-nous</span></a>
                 </div>
             </div>
-        </section>
-        <!-- Ready Section -->
+        </div>
+    </section>
+    <!-- Ready Section -->
 
-        <!-- Services Section -->
-        <section class="service_section_2 commonSection">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <h2 class="sec_title">Solutions globales<br> de réparations</h2>
-                        <p class="sec_desc">
-                            Nous sommes dévoués à vous offrir le meilleur service!
+    <!-- Services Section -->
+    <section class="service_section_2 commonSection">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="sec_title">Solutions globales<br> de réparations</h2>
+                    <p class="sec_desc">
+                        Nous sommes dévoués à vous offrir le meilleur service!
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 col-md-4">
+                    <div class="icon_box_2 text-center">
+                        <h3>REPARATION</h3>
+                        <p>
+                            Sous rendez-vous, nous prenons en charge votre matériel.
                         </p>
+                        <div class="iconWrap">
+                            <img src="{% static 'images/icons/repar.png' %}" alt="repare">
+                        </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-4 col-sm-6 col-md-4">
-                        <div class="icon_box_2 text-center">
-                            <h3>REPARATION</h3>
-                            <p>
-                                Sous rendez-vous, nous prenons en charge votre matériel.
-                            </p>
-                            <div class="iconWrap">
-                                <img src="{% static 'images/icons/repar.png' %}" alt="repare">
-                            </div>
+                <div class="col-lg-4 col-sm-6 col-md-4">
+                    <div class="icon_box_2 text-center">
+                        <h3>CENTRES</h3>
+                        <p>
+                            Plusieurs centres sont disponibles sur le territoire.
+                        </p>
+                        <div class="iconWrap">
+                            <img src="{% static 'images/icons/center.png' %}" alt="center">
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 col-md-4">
-                        <div class="icon_box_2 text-center">
-                            <h3>CENTRES</h3>
-                            <p>
-                                Plusieurs centres sont disponibles sur le territoire.
-                            </p>
-                            <div class="iconWrap">
-                                 <img src="{% static 'images/icons/center.png' %}" alt="center">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6 col-md-4">
-                        <div class="icon_box_2 text-center">
-                            <h3>EXPERTS</h3>
-                            <p>
-                                Décrivez votre problème, on vous propose une solution
-                            </p>
-                            <div class="iconWrap">
-                                 <img src="{% static 'images/icons/experts.png' %}" alt="experts">
-                            </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-md-4">
+                    <div class="icon_box_2 text-center">
+                        <h3>EXPERTS</h3>
+                        <p>
+                            Décrivez votre problème, on vous propose une solution
+                        </p>
+                        <div class="iconWrap">
+                            <img src="{% static 'images/icons/experts.png' %}" alt="experts">
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- Services Section -->
+        </div>
+    </section>
+    <!-- Services Section -->
 
-        <!-- Open Street Map -->
-        <section>
-            <style type="text/css">
+    <!-- Open Street Map -->
+    <section>
+        <style type="text/css">
 
-                #map {
-                    height: 700px;
-                    width:60%;
-                    margin-top: 0;
-                    margin-bottom: 100px;
-                }
-            </style>
+            #map {
+                height: 700px;
+                width: 60%;
+                margin-top: 0;
+                margin-bottom: 100px;
+            }
+        </style>
 
-                <div id="map">
-                    <!-- display map -->
+        <div id="map">
+            <!-- display map -->
+        </div>
+        <script type="text/javascript">
+
+            var lat = 47.222990;
+            var lon = 2.065970;
+
+            function initMap() {
+
+                citymap = L.map('map').setView([lat, lon], 6);
+
+                L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+
+                    attribution: '© OpenStreetMap/ODbL',
+                    minZoom: 6,
+                    maxZoom: 7,
+                }).addTo(citymap);
+
+                var onlineicon = L.icon({
+                    iconUrl: '/static/images/icons/logo-03.svg',
+                    iconSize: [28, 75],
+                    popupAnchor: [0, -15]
+                });
+
+
+                {% for object in object_list %}
+                    var marker = L.marker([{{ object.location_lat }}, {{ object.location_lon }}], {icon: onlineicon}).addTo(citymap);
+                    marker.bindPopup({% include 'popup.html' %});
+                {% endfor %}
+            }
+
+            window.onload = function () {
+                initMap();
+            };
+        </script>
+    </section>
+
+    <!-- Quote Section -->
+
+    <section class="noPadding">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 noPadding">
+                    <div class="btn_link">
+                        <a href="#">Plus de 20 ans à votre service</a>
+                    </div>
                 </div>
-                <script type="text/javascript">
+            </div>
+        </div>
+    </section>
 
-                    var lat = 47.222990;
-                    var lon = 2.065970;
+    <!-- Featured Section -->
 
-                    function initMap() {
+    <section class="commonSection featured">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-12  col-md-5">
+                    <div class="features_content">
+                        <h4 class="sub_title">notre service</h4>
+                        <h2 class="sec_title">une vraie expérience</h2>
 
-                        citymap = L.map('map').setView([lat, lon], 6);
-
-                        L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-
-                            attribution: '© OpenStreetMap/ODbL',
-                            minZoom: 6,
-                            maxZoom: 7,
-                        }).addTo(citymap);
-
-                        var onlineicon = L.icon({
-                            iconUrl: '/static/images/icons/logo-03.svg',
-                            iconSize: [28, 75],
-                            popupAnchor: [0,-15]
-                        });
-
-
-                        {% for object in object_list %}
-                            var marker = L.marker([{{ object.location_lat }}, {{ object.location_lon }}], {icon: onlineicon}).addTo(citymap);
-                            marker.bindPopup( {% include 'popup.html' %} );
-                        {% endfor %}
-                    }
-
-                    window.onload = function () {
-                        initMap();
-                    };
-                </script>
-        </section>
-
-          <!-- Quote Section -->
-
-        <section class="noPadding">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 noPadding">
-                        <div class="btn_link">
-                            <a href="#">Plus de 20 ans à votre service</a>
+                        <div class="singleFeature">
+                            <div class="f_count">1</div>
+                            <h3>centre</h3>
+                            <p>
+                                Vous choisissez votre centre sur la carte présente et vous laissez vos
+                                coordonnées dans le formulaire proposé.
+                            </p>
+                            <br>
+                        </div>
+                        <div class="singleFeature">
+                            <div class="f_count">2</div>
+                            <h3>contact</h3>
+                            <p>
+                                Un technicien informatique "PADAWAN" prendra contact avec vous sous la supervision de
+                                son coach-formateur "YODA"
+                            </p>
+                            <br>
+                        </div>
+                        <div class="singleFeature">
+                            <div class="f_count">3</div>
+                            <h3>diagnostic</h3>
+                            <p>
+                                Le diagnostic peut être réalisé à distance où vous serez alors invité à déposer votre
+                                matériel dans le centre de formation le plus proche
+                            </p>
+                            <br>
+                        </div>
+                        <div class="singleFeature">
+                            <div class="f_count">4</div>
+                            <h3>intervention</h3>
+                            <p>
+                                Une fois l'intervention réalisée, vous repartez avec votre matériel, des conseils et le sourire !
+                            </p>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-sm-12 col-md-7 noPaddingRight">
+                    <div class="features_img">
+                        <img src="{% static 'images/atwork2.jpg' %}" alt="atwork2"/>
+                    </div>
+                    <br>
+                    <div class="features_img">
+                        <img src="{% static 'images/atwork.jpg' %}" alt="atwork"/>
+                       <!-- <div class="img_details">
+                            <h4>Ouvert du lundi au vendredi de 09h a 19h</h4>  -->
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Featured Section -->
-
-        <section class="commonSection featured">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-5 col-sm-12  col-md-5">
-                        <div class="features_content">
-                            <h4 class="sub_title">notre service</h4>
-                            <h2 class="sec_title">une vraie expérience</h2>
-
-                            <div class="singleFeature">
-                                <div class="f_count">1</div>
-                                <h3>rendez-vous</h3>
-                                <p>
-                                    En quelques minutes, nous nous accordons sur un rendez-vous.
-                                </p>
-                            </div>
-                            <div class="singleFeature">
-                                <div class="f_count">2</div>
-                                <h3>Etat de votre commande</h3>
-                                <p>
-                                    Vous êtes prévenu par mail à chaque étape de votre commande.
-                                </p>
-                            </div>
-                            <div class="singleFeature">
-                                <div class="f_count">3</div>
-                                <h3>Quelques jours suffisent</h3>
-                                <p>
-                                    La majorité des réparations s'effectue en moins d'une semaine.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-7 col-sm-12 col-md-7 noPaddingRight">
-                        <div class="features_img">
-                            <img src="{% static 'images/laptops.jpg' %}" alt="laptops"/>
-                            <div class="img_details">
-                                <h4>Ouvert du lundi au vendredi de 09h a 19h</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
 {% endblock %}
